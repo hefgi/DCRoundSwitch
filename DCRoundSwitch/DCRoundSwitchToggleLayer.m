@@ -64,15 +64,15 @@
 	}
 
 	// off tint color (white)
-	CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.963 alpha:1.0].CGColor);
+	CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.925490F green:0.450980F blue:0.015686F alpha:1.0F].CGColor);
 	CGContextFillRect(context, CGRectMake(knobCenter, 0, self.bounds.size.width - knobCenter, self.bounds.size.height));
 
 	// knob shadow
-	CGContextSetShadowWithColor(context, CGSizeMake(0, 0), 1.5, [UIColor colorWithWhite:0.2 alpha:1.0].CGColor);
-	CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:0.42 alpha:1.0].CGColor);
-	CGContextSetLineWidth(context, 1.0);
-	CGContextStrokeEllipseInRect(context, knobRect);
-	CGContextSetShadowWithColor(context, CGSizeMake(0, 0), 0, NULL);
+//	CGContextSetShadowWithColor(context, CGSizeMake(0, 0), 1.5, [UIColor colorWithWhite:0.2 alpha:1.0].CGColor);
+//	CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:0.42 alpha:1.0].CGColor);
+//	CGContextSetLineWidth(context, 1.0);
+//	CGContextStrokeEllipseInRect(context, knobRect);
+//	CGContextSetShadowWithColor(context, CGSizeMake(0, 0), 0, NULL);
 	
 
 	// strings
@@ -91,9 +91,10 @@
 	// 'OFF' state label (self.offString)
 	CGSize offTextSize = [self.offString sizeWithFont:self.labelFont];
 	CGPoint offTextPoint = CGPointMake(textSpaceWidth + (textSpaceWidth - offTextSize.width) / 2.0 + knobRadius * .86, floorf((self.bounds.size.height - offTextSize.height) / 2.0) + 1.0);
-	[[UIColor whiteColor] set];
+	[[UIColor colorWithWhite:0.45 alpha:1.0] set];
 	[self.offString drawAtPoint:CGPointMake(offTextPoint.x, offTextPoint.y + 1.0) withFont:self.labelFont];
-	[[UIColor colorWithWhite:0.52 alpha:1.0] set];
+//	[[UIColor colorWithWhite:0.52 alpha:1.0] set];
+	[[UIColor whiteColor] set];
 	[self.offString drawAtPoint:offTextPoint withFont:self.labelFont];
 
 	UIGraphicsPopContext();
